@@ -1,0 +1,5 @@
+{% ckan_extends %}
+
+{% block package_basic_fields_custom %}
+  {{ form.input('test_field', label=_('test field'), id='field-custom_text', placeholder=_('test_field'), value=data.test_field, error=errors.custom_text, classes=['control-medium']) }}
+{% endblock %}
