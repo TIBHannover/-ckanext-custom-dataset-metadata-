@@ -1,0 +1,13 @@
+{% ckan_extends %}
+
+{% block package_basic_fields_custom %}
+  {{ 
+    form.input('type',
+       label=_('Dataset Type'), 
+       id='field-custom_text', 
+       placeholder=_('Dataset Type'), 
+       value=data.type, 
+       error=errors.custom_text, 
+       classes=['control-medium']) 
+    }}
+{% endblock %}

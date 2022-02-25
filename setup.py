@@ -84,7 +84,7 @@ setup(
     # pip to create the appropriate form of executable for the target platform.
     entry_points='''
         [ckan.plugins]
-        custom_dataset_metadata=ckanext.custom_dataset_metadata.plugin:CustomDatasetMetadataPlugin
+        custom_dataset_type=ckanext.custom_dataset_metadata.plugin:CustomDatasetTypePlugin
 
         [babel.extractors]
         ckan = ckan.lib.extract:extract_ckan
