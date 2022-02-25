@@ -1,13 +1,17 @@
 {% ckan_extends %}
 
 {% block package_basic_fields_custom %}
-  {{ 
-    form.input('type',
-       label=_('Dataset Type'), 
-       id='field-custom_text', 
-       placeholder=_('Dataset Type'), 
-       value=data.type, 
-       error=errors.custom_text, 
-       classes=['control-medium']) 
-    }}
+    <h4>{{_('Dataset Type:')}}</h4>   
+    <select name='dataset_type' id='' class="">
+        <option value='0'>
+          {{_('Not selected')}} 
+        </option>
+        <option value='publication-related'>
+          {{_('Publication Related')}} 
+        </option>
+        <option value='workday-relevant'>
+          {{_('Workday Relevant')}} 
+        </option>
+    </select>
+    <br>
 {% endblock %}
