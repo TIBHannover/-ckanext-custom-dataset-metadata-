@@ -4,17 +4,46 @@
     {% asset 'ckanext-custom-dataset-type/base-css' %}
     {% asset 'ckanext-custom-dataset-type/base-js' %}
 
-    <h4>{{_('Dataset Type:')}}</h4>   
-    <select name='sfb_dataset_type' id='sfb_dataset_type_dropdown' class="sfb_dataset_type_dropdown">
-        <option value=''>
-          {{_('Not selected')}} 
-        </option>
-        <option value='Publication Related'>
-          {{_('Publication Related')}} 
-        </option>
-        <option value='Workday Relevant'>
-          {{_('Workday Relevant')}} 
-        </option>
-    </select>
-    <br>
+    {% if not data['id'] %}
+        <h4>{{_('Dataset Type:')}}</h4>   
+        <select name='sfb_dataset_type' id='sfb_dataset_type_dropdown' class="sfb_dataset_type_dropdown">
+            <option value=''>
+              {{_('Not selected')}} 
+            </option>
+            <option value='Publication Related'>
+              {{_('Publication Related')}} 
+            </option>
+            <option value='Workday Relevant'>
+              {{_('Workday Relevant')}} 
+            </option>
+        </select>
+        <br>
+    {% else %}
+      <h4>{{_('Dataset Type:')}}</h4>   
+        <select name='sfb_dataset_type' id='sfb_dataset_type_dropdown' class="sfb_dataset_type_dropdown">
+            <option value=''>
+              {{_('Not selected')}} 
+            </option>
+            {% if data['sfb_dataset_type'] == 'Publication Related' %}
+              <option value='Publication Related' selected>
+                {{_('Publication Related')}} 
+              </option>
+            {% else %}
+                 <option value='Publication Related'>
+                    {{_('Publication Related')}} 
+                  </option>
+             {% endif %}
+             {% if data['sfb_dataset_type'] == 'Workday Relevant' %}
+                <option value='Workday Relevant' selected>
+                  {{_('Workday Relevant')}} 
+                </option>
+            {% else %}
+                  <option value='Workday Relevant'>
+                    {{_('Workday Relevant')}} 
+                  </option>
+             {% endif %}            
+        </select>
+        <br>
+
+    {% endif %}
 {% endblock %}
