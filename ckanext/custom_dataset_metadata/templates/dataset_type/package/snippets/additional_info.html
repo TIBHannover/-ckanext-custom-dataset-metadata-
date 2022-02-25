@@ -1,10 +1,10 @@
 {% ckan_extends %}
 
 {% block extras %}
-  {% if pkg_dict.test_field %}
+  {% if pkg_dict.dataset_type %}
     <tr>
-      <th scope="row" class="dataset-label">{{ _("test_field") }}</th>
-      <td class="dataset-details">{{ pkg_dict.test_field }}</td>
+      <th scope="row" class="dataset-label">{{ _("dataset_type") }}</th>
+      <td class="dataset-details">{{ pkg_dict.dataset_type }}</td>
     </tr>
   {% endif %}
 {% endblock %}

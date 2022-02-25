@@ -5,6 +5,7 @@ import ckan.plugins.toolkit as toolkit
 class CustomDatasetTypePlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IDatasetForm)
+    plugins.implements(plugins.IFacets)
 
     # IConfigurer
 
@@ -45,5 +46,15 @@ class CustomDatasetTypePlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetFor
         # This plugin doesn't handle any special package types, it just
         # registers itself as the default (above).
         return []
+    
+
+    def dataset_facets(self, facets_dict, package_type):
+        new_facet = { 'dataset_type': plugins.toolkit._('Dataset Type')}
+        # facets_dict.update({
+        #     'dataset_type': plugins.toolkit._('Dataset Type')
+        # })
+        new_facet.update(facets_dict)
+        return new_facet
+
     
     
