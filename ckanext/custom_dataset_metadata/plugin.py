@@ -11,7 +11,8 @@ class CustomDatasetTypePlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetFor
 
     def update_config(self, config_):
         toolkit.add_template_directory(config_, 'templates/dataset_type')
-        toolkit.add_public_directory(config_, 'public')
+        toolkit.add_public_directory(config_, 'public/dataset_type')
+        toolkit.add_resource('public/dataset_type', 'ckanext-custom-dataset-type')
     
 
     def _custom_dataset_metadata(self, schema):
