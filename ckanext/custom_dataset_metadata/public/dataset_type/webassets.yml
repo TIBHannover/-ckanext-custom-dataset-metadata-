@@ -1,10 +1,10 @@
-dataset-type-css:
+base-css:
   output: ckanext-custom-dataset-type/%(version)s_my.css
   contents:
     - base.css
 
 
-dataset-type-js:  
+base-js:  
   output: ckanext-custom-dataset-type/%(version)s_my.js
   extra:
     preload:

@@ -1,8 +1,11 @@
 {% ckan_extends %}
 
 {% block package_basic_fields_custom %}
+    {% asset 'ckanext-custom-dataset-type/base-css' %}
+    {% asset 'ckanext-custom-dataset-type/base-js' %}
+
     <h4>{{_('Dataset Type:')}}</h4>   
-    <select name='sfb_dataset_type' id='' class="">
+    <select name='sfb_dataset_type' id='sfb_dataset_type_dropdown' class="">
         <option value='0'>
           {{_('Not selected')}} 
         </option>
