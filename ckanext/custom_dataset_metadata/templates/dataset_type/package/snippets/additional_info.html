@@ -1,10 +1,10 @@
 {% ckan_extends %}
 
 {% block extras %}
-  {% if pkg_dict.dataset_type %}
+  {% if pkg_dict.sfb_dataset_type %}
     <tr>
-      <th scope="row" class="dataset-label">{{ _("dataset_type") }}</th>
-      <td class="dataset-details">{{ pkg_dict.dataset_type }}</td>
+      <th scope="row" class="dataset-label">{{ _("sfb_dataset_type") }}</th>
+      <td class="dataset-details">{{ pkg_dict.sfb_dataset_type }}</td>
     </tr>
   {% endif %}
 {% endblock %}

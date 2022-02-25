@@ -16,7 +16,7 @@ class CustomDatasetTypePlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetFor
 
     def _custom_dataset_metadata(self, schema):
         schema.update({
-            'dataset_type': [toolkit.get_converter('convert_to_extras')]
+            'sfb_dataset_type': [toolkit.get_converter('convert_to_extras')]
         })
         return schema
 
@@ -33,7 +33,7 @@ class CustomDatasetTypePlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetFor
     def show_package_schema(self):
         schema = super(CustomDatasetTypePlugin, self).show_package_schema()
         schema.update({
-            'dataset_type': [toolkit.get_converter('convert_from_extras')]
+            'sfb_dataset_type': [toolkit.get_converter('convert_from_extras')]
         })
         return schema
 
@@ -49,10 +49,7 @@ class CustomDatasetTypePlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetFor
     
 
     def dataset_facets(self, facets_dict, package_type):
-        new_facet = { 'dataset_type': plugins.toolkit._('Dataset Type')}
-        # facets_dict.update({
-        #     'dataset_type': plugins.toolkit._('Dataset Type')
-        # })
+        new_facet = { 'sfb_dataset_type': plugins.toolkit._('Dataset Type')}
         new_facet.update(facets_dict)
         return new_facet
 
