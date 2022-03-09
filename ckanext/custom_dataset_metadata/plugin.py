@@ -54,5 +54,7 @@ class CustomDatasetTypePlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetFor
         new_facet.update(facets_dict)
         return new_facet
 
+    def  group_facets(self, facets_dict, group_type, package_type):
+        return facets_dict
     
     
