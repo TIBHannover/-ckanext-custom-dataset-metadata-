@@ -34,7 +34,7 @@ class CustomDatasetTypePlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetFor
     def show_package_schema(self):
         schema = super(CustomDatasetTypePlugin, self).show_package_schema()
         schema.update({
-            'sfb_dataset_type': [toolkit.get_validator('ignore_missing'), toolkit.get_converter('convert_from_extras')]
+            'sfb_dataset_type': [toolkit.get_converter('convert_from_extras'), toolkit.get_validator('ignore_missing')]
         })
         return schema
 
