@@ -54,7 +54,15 @@ class CustomDatasetTypePlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetFor
         new_facet.update(facets_dict)
         return new_facet
 
+
+    def  organization_facets(self, facets_dict, group_type, package_type):
+        new_facet = { 'sfb_dataset_type': plugins.toolkit._('Dataset Type')}
+        new_facet.update(facets_dict)
+        return new_facet
+
     def  group_facets(self, facets_dict, group_type, package_type):
-        return facets_dict
+        new_facet = { 'sfb_dataset_type': plugins.toolkit._('Dataset Type')}
+        new_facet.update(facets_dict)
+        return new_facet
     
     

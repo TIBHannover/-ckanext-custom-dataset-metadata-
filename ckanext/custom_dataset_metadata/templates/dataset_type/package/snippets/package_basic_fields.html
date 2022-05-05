@@ -7,7 +7,7 @@
     {% if not data['id'] %}
         <h4>{{_('Dataset Type:')}}</h4>   
         <select name='sfb_dataset_type' id='sfb_dataset_type_dropdown' class="sfb_dataset_type_dropdown">
-            <option value=''>
+            <option value='0'>
               {{_('Not selected')}} 
             </option>
             <option value='Publication Related'>
@@ -21,7 +21,7 @@
     {% else %}
       <h4>{{_('Dataset Type:')}}</h4>   
         <select name='sfb_dataset_type' id='sfb_dataset_type_dropdown' class="sfb_dataset_type_dropdown">
-            <option value=''>
+            <option value='0'>
               {{_('Not selected')}} 
             </option>
             {% if data['sfb_dataset_type'] == 'Publication Related' %}
