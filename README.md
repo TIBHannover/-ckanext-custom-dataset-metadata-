@@ -1,3 +1,6 @@
+This plugin is no longer used and merged in this extension:
+https://github.com/TIBHannover/ckanext-crc1153
+
 # ckanext-custom-dataset-metadata
 
 Plugin custom_dataset_type:
